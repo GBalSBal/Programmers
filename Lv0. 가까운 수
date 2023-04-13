@@ -1,0 +1,19 @@
+import java.lang.Math; //Math.abs()를 쓰기 위한 임포트
+
+class Solution {
+    public int solution(int[] array, int n) {
+        int answer = 0;
+        int cha = 100;
+        
+        for(int i=0;i<array.length;i++){
+            if(Math.abs(n-array[i])<cha){
+                cha = Math.abs(n-array[i]); //Math.abs() : 절대값 함수
+                answer=array[i];
+            }
+            else if(Math.abs(n-array[i])==cha){
+                if(array[i]<answer) answer=array[i];
+            }
+        }
+        return answer;
+    }
+}
