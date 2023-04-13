@@ -1,0 +1,17 @@
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        int hap = 0;
+        
+        for (int i=1;i<n+1;i++){
+            hap = 0;
+            for(int j=1;j<=100;j++){
+                if(i%j==0){
+                    hap++;
+                }
+            }
+            if(hap>=3) answer++;
+        }
+        return answer;
+    }
+}
