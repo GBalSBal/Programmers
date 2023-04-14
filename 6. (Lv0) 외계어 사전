@@ -1,0 +1,22 @@
+class Solution {
+    public int solution(String[] spell, String[] dic) {
+        int answer = 0;
+        int judge = 0;
+        int judge1 = 0;
+        
+        for (int i=0;i<dic.length;i++){
+            String dic1[]=dic[i].split("");
+            for (int j=0;j<dic1[i].length;j++){
+                for (int z=0;j<spell.length;z++){
+                    if(dic[i]==spell[j]) judge++;
+                }
+            }
+            if(judge==dic[i].length) judge1++;
+        }
+        
+        if (judge1==dic.length) answer=1;
+        else answer=2;
+        
+        return answer;
+    }
+}
