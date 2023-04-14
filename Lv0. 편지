@@ -1,0 +1,15 @@
+class Solution {
+    public int solution(String message) {
+        int answer = 0;
+        int length = 0;
+        
+        String text[]=message.split(""); //string을 배열로 저장
+        
+        for(int i=0;i<text.length;i++){
+            length++;
+        }
+        answer=2*length;
+        
+        return answer;
+    }
+}
