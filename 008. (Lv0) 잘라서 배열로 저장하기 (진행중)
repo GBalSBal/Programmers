@@ -6,16 +6,13 @@ class Solution {
     public String[] solution(String my_str, int n) {
         String[] answer = {};
         String[] answer1 = my_str.split("");
-        StringBuffer Bytebuffer=new StringBuffer();
+        StringBuffer stringbuffer=new StringBuffer();
+        int result = 0;
         
-        for(int  i=0;i<n;i++){
-            do{
-                Bytebuffer.append(answer1[i]);
-            }while(i%n!=0);
-                
-            answer[i/n]=Bytebuffer.toString();
-            //Bytebuffer.put(answer[])
-            //answer[i/n]=ArrayUtils.addAll(answer[i/n],answer1[i]);
+        for(int i=0;i<answer1.length;i++){
+            stringbuffer.append(answer1[i]);
+            result=i/n;
+            if(i%n==0) answer[result]=stringbuffer.toString();
         }
         
         return answer;
