@@ -1,0 +1,27 @@
+class Solution {
+    public int solution(String[] spell, String[] dic) {
+        int answer = 0;
+        int judge = 0;
+        int judge1 = 0;
+        String dic1[]={};
+        
+        for(int i=0;i<dic.length;i++){
+            judge = 0;
+            dic1=dic[i].split("");
+            for(int j=0;j<spell.length;j++){
+                for(int z=0;z<dic1.length;z++){
+                    if(dic1.length<spell.length) break; //중요포인트1
+                    if(spell[j].equals(dic1[z])){
+                        judge++;
+                        break; //중요포인트2
+                    }
+                }
+            }
+            if (judge==dic1.length) judge1++;
+        }
+        if (judge1>0) answer = 1;
+        else answer = 2;
+        
+        return answer;
+    }
+}
