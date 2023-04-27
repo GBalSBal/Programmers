@@ -1,0 +1,15 @@
+class Solution {
+    public int[] solution(String s) {
+        int[] answer = {};
+        String[] ss= s.split("");
+        
+        for(int i=0;i<ss.length;i++){
+            for(int j=0;j<i;j++){
+                if(ss[i].equals(ss[j])) answer[i]=i-j;
+            }
+            if(answer[i]==0) answer[i]=-1;
+        }
+        
+        return answer;
+    }
+}
